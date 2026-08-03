@@ -5,6 +5,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Changa:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800&family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 
+/* Prevent horizontal scroll caused by AOS transforms */
+html, body { overflow-x: hidden; }
+
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
   --gold-primary:   #D4AF37;
@@ -180,6 +183,9 @@ html[dir="ltr"] .section-subtitle::after {
 #preloader.loaded { opacity: 0; visibility: hidden; }
 
 .preloader-scale { display: flex; flex-direction: column; align-items: center; transform: scale(2); }
+@media (max-width: 639px) {
+  .preloader-scale { transform: scale(1.4); }
+}
 
 .loader-glow {
   width: 140px;
