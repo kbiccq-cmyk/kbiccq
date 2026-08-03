@@ -668,7 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof Swiper !== 'undefined') {
     testimonialsSwiper = new Swiper('.testimonials-slider', {
       slidesPerView: 1,
-      spaceBetween: 30,
+      spaceBetween: 0,
       loop: true,
       autoplay: {
         delay: 5000,
@@ -679,9 +679,12 @@ document.addEventListener('DOMContentLoaded', () => {
         clickable: true,
       },
       breakpoints: {
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
+        768: { slidesPerView: 2, spaceBetween: 30 },
+        1024: { slidesPerView: 3, spaceBetween: 30 }
       }
+    });
+    window.addEventListener('resize', () => {
+      if (testimonialsSwiper) testimonialsSwiper.update();
     });
   }
 

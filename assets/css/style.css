@@ -8,6 +8,17 @@
 /* Prevent horizontal scroll caused by AOS transforms */
 html, body { overflow-x: hidden; }
 
+/* About title: keep on a single line on mobile (AR/EN) */
+@media (max-width: 639px) {
+  .title-one-line { white-space: nowrap; font-size: clamp(8px, calc((100vw - 40px) / 34), 11px); }
+}
+
+/* Testimonials: exactly one full card per screen on mobile */
+@media (max-width: 767px) {
+  .testimonials-slider .swiper-slide { width: 100% !important; }
+  .testimonials-slider { overflow: hidden; }
+}
+
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
   --gold-primary:   #D4AF37;
@@ -243,6 +254,13 @@ html[dir="ltr"] .nav-link::after { right: auto; left: 0; }
 }
 
 /* ─── Stat Cards (Hero) ─────────────────────────────────────────────────── */
+@media (max-width: 639px) {
+  .stat-card-luxury .stat-val-text { font-size: 18px; }
+  .stat-card-luxury p { font-size: 11px; }
+  .stat-card-luxury span { font-size: 9px; }
+  .stat-card-luxury .stat-icon-glow { margin-bottom: 0.6rem; }
+}
+
 .stat-card-luxury {
   position: relative;
   background: rgba(12, 13, 20, 0.88);
